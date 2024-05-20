@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+
+
+  /* -------------------------------------------------Navbar.js----------------------------------------------- */
+.navbar {
+    width: 100vw;
+    height: 15vh;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.left h1{
+    color: white;
+    font-weight: 400;
+    font-size:xx-large;
+    border-left: 2px solid white;
+    padding-left : 20px;
+}
+
+.navbar .left img {
+    padding: 0 20px;
+    height: 4vh;
+}
+
+.navbar input {
+    height : 6vh;
+    width: 25vw;
+    border-radius: 25px;
+    border: 0;
+    background-color: rgba(255,255, 255, 0.2);
+    font-size: 16px;
+    text-align: center;
+}
+
+.navbar input::placeholder {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;  
+}
+
+.navbar .right {
+  margin:0 5vw;
+}
+
+.region{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.regionarea {
+  color: white;
+  opacity: 0.8;
+  padding : 0 15px 0 10px;
+  font-size: 25px;
+}
+
+.tempunit{
+  color: white;
+  opacity: 0.8;
+  border-left: 2px solid white;
+  padding : 0 30px 0 15px;
+  font-size: 25px;
+}
+
+.navbar .right img {
+  height : 30px;
+}
+
+
+/* HamburgerButton.css */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: white;
+  }
+  
+  .hamburger .line {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+  }
+  
+  .hamburger.open .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .hamburger.open .line:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.open .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
+
+/* -------------------------------------------------Navigation.js----------------------------------------------- */
+
+
+.currstat{
+  height : 7vh;
+  background-color: white;
+  opacity: 0.3;
+  width: 100vw;
+  text-align: left;
+  border-bottom: 2px solid wheat;
+}
+
+.stat{
+  height : 7vh;
+  background-color: white;
+  opacity: 0.3;
+  width: 100vw;
+  text-align: left;
+}
+
+
+
+/* -----------------------------------------------------------Weather Body---------------------------------------------- */
+
+
+.weatherbody{
+  width: 100vw;
+  display: flex;
+}

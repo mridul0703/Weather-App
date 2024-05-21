@@ -1,8 +1,10 @@
-* {
-    margin: 0;
+
+*,
+*::before,
+*::after {
+  margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
 
 
@@ -20,7 +22,7 @@
 .left {
     display: flex;
     align-items: center;
-    padding: 0 10px;
+    padding: 0 20px;
 }
 
 .left h1{
@@ -99,14 +101,14 @@
   
   .hamburger .line {
     width: 30px;
-    height: 3px;
+    height: 4px;
     background-color: white;
     transition: all 0.3s ease;
     opacity: 0.8;
   }
   
   .hamburger.open .line:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(5px, 6px);
   }
   
   .hamburger.open .line:nth-child(2) {
@@ -114,7 +116,7 @@
   }
   
   .hamburger.open .line:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
+    transform: rotate(-45deg) translate(5px, -6px);
   }
   
 
@@ -146,4 +148,37 @@
 .weatherbody{
   width: 100vw;
   display: flex;
+  justify-content: center;
+}
+
+.card {
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.leftcol{
+  display: flex;
+  flex-direction: column;
+  padding: 15px 10px 0 0 ;
+ 
+}
+
+.rightcol{
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0 0 0;
+}
+
+.lcard {
+  height: 10vh;
+  width: 50vw;
+  background-color: white;
+  opacity: 0.2;
+}
+
+.rcard {
+  height: 30vh;
+  width: 30vw;
+  background-color: white;
+  opacity: 0.2; 
 }

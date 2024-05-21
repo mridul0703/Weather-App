@@ -1,5 +1,4 @@
 import logo from '../Img/logo.png';
-// import globe from '../Img/globe.png';
 import { FaGlobeAmericas } from 'react-icons/fa';
 import React, { useState } from 'react';
 
@@ -26,12 +25,12 @@ const HamburgerButton = () => {
       </button>
     );
   };
+  
 
-
-
-function Navbar (){
+export default function Navbar (){
     return(
-        <div className="navbar">
+      <>
+      <div className="navbar">
             <div className="left">
                 <img src={logo} alt="Logo" />
                 <h1>Weather App</h1>
@@ -46,7 +45,9 @@ function Navbar (){
                 </div>
             </div>
         </div>
+        <div className="currstat" id="currstat"></div>
+        <div className="stat" id="stat"></div>
+        </>
+        
     )
 }
-
-export default Navbar;

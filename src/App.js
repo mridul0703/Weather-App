@@ -1,7 +1,7 @@
 import Navbar from './Components/navbar';
 import RowLeft from './Components/rowleft'
 import './styles.css';
-
+import './App.css';
 
 
 function App() { 

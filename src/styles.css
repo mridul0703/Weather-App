@@ -58,6 +58,7 @@
   margin:0 5vw;
 }
 
+
 .region{
   display: flex;
   align-items: center;
@@ -124,22 +125,62 @@
 
 
 .currstat{
-  height : 7vh;
-  background-color: white;
-  opacity: 0.3;
+  height : 9.5vh;
   width: 100vw;
-  text-align: left;
-  border-bottom: 2px solid wheat;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 0 8px 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
+
+.cstate {
+  display: flex;
+  height: 100%;
+  width: 30vw;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  color: white !important;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+} 
+
 
 .stat{
-  height : 7vh;
-  background-color: white;
-  opacity: 0.3;
+  height : 9vh;
   width: 100vw;
+  padding: 0 8vw 0 8vw;
   text-align: left;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1)
 }
 
+
+.stat a {
+  display: inline-flex;
+  height:6vh;
+  width: 10vw;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+
+}
+
+.stat a:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  color: white;
+}
 
 
 /* -----------------------------------------------------------Weather Body---------------------------------------------- */
@@ -154,31 +195,31 @@
 .card {
   border-radius: 10px;
   margin-bottom: 10px;
+  opacity: 0.3; 
 }
 
 .leftcol{
   display: flex;
   flex-direction: column;
-  padding: 15px 10px 0 0 ;
- 
+  padding: 10px 10px 0 0 ;
 }
 
 .rightcol{
   display: flex;
   flex-direction: column;
-  padding: 15px 0 0 0;
+  padding: 10px 0 0 0;
 }
 
 .lcard {
   height: 10vh;
   width: 50vw;
   background-color: white;
-  opacity: 0.2;
+  
 }
 
 .rcard {
   height: 30vh;
   width: 30vw;
   background-color: white;
-  opacity: 0.2; 
+  
 }

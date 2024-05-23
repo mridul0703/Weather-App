@@ -21,6 +21,6 @@ code {
   background-image: url('../Images/background1.png');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: left top;
   z-index: -1;
 }

@@ -44,7 +44,7 @@
     border-radius: 25px;
     border: 0;
     background-color: rgba(255,255, 255, 0.2);
-    font-size: 16px;
+    font-size: large;
     text-align: center;
 }
 
@@ -125,7 +125,7 @@
 
 
 .currstat{
-  height : 9.5vh;
+  height : 8.5vh;
   width: 100vw;
   display: flex;
   text-align: center;
@@ -145,14 +145,14 @@
   font-size: large;
   color: white !important;
   background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 15px;
+  border-radius: 20px;
 } 
 
 
 .stat{
-  height : 9vh;
+  height : 8.5vh;
   width: 100vw;
-  padding: 0 8vw 0 8vw;
+  padding: 0 20vw 0 10vw;
   text-align: left;
   display: flex;
   justify-content: space-around;
@@ -172,7 +172,7 @@
   font-size: 20px;
   text-decoration: none;
   background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 15px;
+  border-radius: 20px;
 
 }
 
@@ -195,7 +195,6 @@
 .card {
   border-radius: 10px;
   margin-bottom: 10px;
-  opacity: 0.3; 
 }
 
 .leftcol{
@@ -218,8 +217,177 @@
 }
 
 .rcard {
-  height: 30vh;
+  height: 60vh;
   width: 30vw;
-  background-color: white;
+  background-image: url(../src/Img/city1.png);
+}
+
+.lno1 {
+  background-image: url(../src/Img/image.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.lno2 {
+  background-image: url(../src/Img/weather.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.maincard {
+  display: flex;
+  height: 25%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: larger;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.maincard2 { 
+  display: flex;
+  height: 18%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: large;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.maincard3 { 
+  display: flex;
+  height: 15%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: larger;
+  align-items: center;
+  padding-left: 20px;
+}
+
+
+.pricard1{
+  display: flex;
+  height: 75%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pricard1 img {
+  height: 50%;
+  padding-right: 4%;
+}
+
+.primaryone{
+  padding-left: 2%;
+  width: 70%;
+}
+
+.primaryone h1 {
+  margin-top: -20px;
+  font-size: 90px;
+  color: white;
+}
+.primaryone p {
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+}
+
+
+
+.pricard2 {
+  height: 68%;
+}
+
+.rows2 {
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+  height: 25%;
+  color: white;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+}
+
+.rows2 h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: x-large;
+  width: 20%;
+}
+
+.rows2 p {
+  font-size: x-large;
+  font-weight: 600;
   
+}
+
+.rows2 img {
+  height: 50px;
+}
+.bottomcard {
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottomcard button {
+  height: 6vh;
+  width: 30%;
+  font-weight: 600;
+  font-size: 20px;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+
+}
+
+
+.sun{
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 700;
+  height: 10%;
+}
+
+.sun-row {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.sec-card3
+{
+  color: white;
+  font-weight: 700;
+  font-size: medium;
+  display: flex;
+  flex-direction: column;
+  padding: 0 5px ;
+  height: 70%;
+  width: 100%;
+  justify-content: space-around;
+  
+}
+
+.card3-rows {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 10%;
+}
+
+.card3-mid-row{
+  display: flex;
+  justify-content: center;
+  width: 30%;
 }

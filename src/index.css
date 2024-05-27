@@ -11,16 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  /* width: 100vw;
-  height: 100vh; */
-  background-image: url('../Images/background1.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: left top;
-  z-index: -1;
-}

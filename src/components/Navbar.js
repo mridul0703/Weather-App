@@ -1,4 +1,3 @@
-// src/components/Navbar.js
 import React, { useEffect, useState } from 'react';
 import Search from './Search';
 import './Navbar.css'; // Import CSS file

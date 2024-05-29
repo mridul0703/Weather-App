@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import WeatherInfo from './components/WeatherInfo';
+import UserLocationWeather from './components/UserLocationWeather';
 import axios from 'axios';
 import './App.css';
 
@@ -47,7 +48,9 @@ function App() {
   return (
     <div className="App">
       <Navbar initialWeatherData={weatherData} onCitySelect={handleWeatherData} onTempUnitChange={handleTempUnitChange} />
+      <UserLocationWeather weatherData={weatherData} tempUnit={tempUnit} />
       {weatherData && <WeatherInfo weatherData={weatherData} tempUnit={tempUnit} />}
+      
     </div>
   );
 }

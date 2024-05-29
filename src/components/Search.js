@@ -7,6 +7,7 @@ const API_KEY = '1fb9b7430ade9dc72614f3f70d323ea3'; // Replace with your OpenWea
 
 const Search = ({ onCitySelect }) => {
   const [value, setValue] = useState('');
+  const [placeholder, setPlaceholder] = useState('Type a city name...');
   const [suggestions, setSuggestions] = useState([]);
 
   const getSuggestions = async (value) => {
@@ -45,13 +46,25 @@ const Search = ({ onCitySelect }) => {
     setSuggestions([]);
   };
 
+  const handleFocus = () => {
+    setPlaceholder('');
+  };
+
+  const handleBlur = () => {
+    if (value === '') {
+      setPlaceholder('Type a city name...');
+    }
+  };
+
   return (
     <div className="search-container">
       <input
         type="text"
         value={value}
         onChange={onChange}
-        placeholder="Type a city name..."
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        placeholder={placeholder}
         className="search-input"
       />
       <ul className="suggestions-list">

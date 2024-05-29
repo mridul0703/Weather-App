@@ -3,11 +3,17 @@ import React from "react";
 import "./WeatherInfo.css";
 
 const WeatherInfo = ({ weatherData, tempUnit }) => {
-  const { name, sys, main, weather, wind, visibility, clouds } = weatherData;
+  const { name, sys, main, weather, wind, visibility, clouds, coord } = weatherData;
+  console.log(weatherData);
 
   // Function to convert temperature based on selected unit
   const convertTemperature = (temp) => {
     return tempUnit === 'celsius' ? (temp - 273.15).toFixed(0) + '°C' : ((temp - 273.15) * 9 / 5 + 32).toFixed(0) + '°F';
+  };
+
+  // Function to capitalize the first letter of a string
+  const capitalize = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
   };
 
   return (
@@ -20,13 +26,16 @@ const WeatherInfo = ({ weatherData, tempUnit }) => {
           <div className="weather-left">
             <div className="weather-left-row row1">
               <div>
+                
                 <h2>{convertTemperature(main.temp)}</h2>
-                <p>{weather[0].description}</p>
+                <p>{capitalize(weather[0].description)}</p>
               </div>
               <div className="weather-icon"></div>
             </div>
             <div className="weather-left-row row2">
+                
               <div>
+              
                 <h2>Sunrise</h2>
                 <p>{new Date(sys.sunrise * 1000).toLocaleTimeString()}</p>
               </div>
@@ -38,12 +47,12 @@ const WeatherInfo = ({ weatherData, tempUnit }) => {
           </div>
           <div className="weather-right">
             <div className="right-rows">
-              <h2>Day</h2>
-              <p>{convertTemperature(main.temp_max)}</p>
+              <h2>Latitude</h2>
+              <p>{coord.lat}</p>
             </div>
             <div className="right-rows">
-              <h2>Night</h2>
-              <p>{convertTemperature(main.temp_min)}</p>
+              <h2>Longitude</h2>
+              <p>{coord.lon}</p>
             </div>
             <div className="right-rows">
               <h2>Humidity</h2>

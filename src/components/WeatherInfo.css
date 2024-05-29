@@ -6,7 +6,7 @@
     color: white;
 }
 .full-weather {
-    height: 85vh;
+    height: 75vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,6 +53,10 @@
     justify-content: space-around;
 }
 
+.weather-left-row img {
+    height: 10vh;
+}
+
 .row1 {
     height: 50%;
 }
@@ -66,6 +70,10 @@
 
 .row2 {
     height: 30%;
+}
+
+.row2-main {
+    display: flex;
 }
 
 .weather-right {

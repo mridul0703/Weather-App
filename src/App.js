@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import WeatherInfo from './components/WeatherInfo';
@@ -10,6 +9,7 @@ const API_KEY = '1fb9b7430ade9dc72614f3f70d323ea3'; // Replace with your OpenWea
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
+  const [forecastData, setForecastData] = useState(null);
   const [tempUnit, setTempUnit] = useState('celsius'); // State to hold temperature unit
 
   useEffect(() => {
@@ -18,6 +18,7 @@ function App() {
         (position) => {
           const { latitude, longitude } = position.coords;
           fetchWeatherData(latitude, longitude);
+          fetchForecastData(latitude, longitude);
         },
         (error) => {
           console.error('Error fetching user location:', error);
@@ -37,6 +38,15 @@ function App() {
     }
   };
 
+  const fetchForecastData = async (latitude, longitude) => {
+    try {
+      const response = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`);
+      setForecastData(response.data);
+    } catch (error) {
+      console.error('Error fetching forecast data:', error);
+    }
+  };
+
   const handleWeatherData = (data) => {
     setWeatherData(data);
   };
@@ -49,8 +59,7 @@ function App() {
     <div className="App">
       <Navbar initialWeatherData={weatherData} onCitySelect={handleWeatherData} onTempUnitChange={handleTempUnitChange} />
       <UserLocationWeather weatherData={weatherData} tempUnit={tempUnit} />
-      {weatherData && <WeatherInfo weatherData={weatherData} tempUnit={tempUnit} />}
-      
+      {weatherData && <WeatherInfo weatherData={weatherData} forecastData={forecastData} tempUnit={tempUnit} />}
     </div>
   );
 }

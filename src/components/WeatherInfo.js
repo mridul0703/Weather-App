@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import "./WeatherInfo.css";
-import axios from "axios";
 
 const WeatherInfo = ({ weatherData, forecastData, tempUnit }) => {
-  const { name, sys, main, weather, wind, visibility, clouds, coord } =
-    weatherData;
+  const { name, sys, main, weather, wind, visibility, clouds, coord } = weatherData;
   const [displayMode, setDisplayMode] = useState("today");
 
   // Function to convert temperature based on selected unit
@@ -30,8 +28,18 @@ const WeatherInfo = ({ weatherData, forecastData, tempUnit }) => {
   return (
     <div className="full-weather">
       <div className="weather-info">
-        <button onClick={handleTodayClick}>Today</button>
-        <button onClick={handle5DaysClick}>5-days</button>
+        <button
+          className={displayMode === "today" ? "active-button" : ""}
+          onClick={handleTodayClick}
+        >
+          Today
+        </button>
+        <button
+          className={displayMode === "5days" ? "active-button" : ""}
+          onClick={handle5DaysClick}
+        >
+          5-days
+        </button>
 
         {displayMode === "today" && (
           <WeatherDetails
@@ -93,12 +101,7 @@ const Forecast = ({ name, country, forecastData, tempUnit, convertTemperature })
       <div className="forecast">
         {Object.keys(groupedForecast).map((date, index) => (
           <div key={index} className="forecast-day">
-            <h3>
-              Day -{" "}
-              {new Date(date).toLocaleDateString(undefined, {
-                weekday: "long",
-              })}
-            </h3>
+            <h3>{new Date(date).toLocaleDateString(undefined, { weekday: "long" })}</h3>
             <div className="forecast-items">
               {Object.keys(groupedForecast[date]).map((time, i) => (
                 <div key={i} className="forecast-column">
@@ -134,9 +137,7 @@ const WeatherDetails = ({
 }) => (
   <>
     <div className="weather-top">
-      <h1>
-        Current Weather in {name}, {sys.country}
-      </h1>
+      <h1>Current Weather in {name}, {sys.country}</h1>
     </div>
     <div className="weatherbelow">
       <div className="weather-left">

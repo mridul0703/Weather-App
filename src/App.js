@@ -8,7 +8,8 @@ import './App.css';
 const API_KEY = '1fb9b7430ade9dc72614f3f70d323ea3'; // Replace with your OpenWeather API key
 
 function App() {
-  const [weatherData, setWeatherData] = useState(null);
+  const [userLocationWeather, setUserLocationWeather] = useState(null);
+  const [currentWeather, setCurrentWeather] = useState(null);
   const [forecastData, setForecastData] = useState(null);
   const [tempUnit, setTempUnit] = useState('celsius'); // State to hold temperature unit
 
@@ -17,7 +18,7 @@ function App() {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           const { latitude, longitude } = position.coords;
-          fetchWeatherData(latitude, longitude);
+          fetchUserLocationWeather(latitude, longitude);
           fetchForecastData(latitude, longitude);
         },
         (error) => {
@@ -29,10 +30,20 @@ function App() {
     }
   }, []);
 
+  const fetchUserLocationWeather = async (latitude, longitude) => {
+    try {
+      const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`);
+      setUserLocationWeather(response.data);
+      setCurrentWeather(response.data); // Set initial weather data to user's location
+    } catch (error) {
+      console.error('Error fetching user location weather data:', error);
+    }
+  };
+
   const fetchWeatherData = async (latitude, longitude) => {
     try {
       const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`);
-      setWeatherData(response.data);
+      setCurrentWeather(response.data);
     } catch (error) {
       console.error('Error fetching weather data:', error);
     }
@@ -42,13 +53,16 @@ function App() {
     try {
       const response = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`);
       setForecastData(response.data);
+      console.log(response.data);
     } catch (error) {
       console.error('Error fetching forecast data:', error);
     }
   };
 
-  const handleWeatherData = (data) => {
-    setWeatherData(data);
+  const handleWeatherData = (city) => {
+    const { lat, lon } = city;
+    fetchWeatherData(lat, lon);
+    fetchForecastData(lat, lon);
   };
 
   const handleTempUnitChange = (unit) => {
@@ -57,9 +71,9 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar initialWeatherData={weatherData} onCitySelect={handleWeatherData} onTempUnitChange={handleTempUnitChange} />
-      <UserLocationWeather weatherData={weatherData} tempUnit={tempUnit} />
-      {weatherData && <WeatherInfo weatherData={weatherData} forecastData={forecastData} tempUnit={tempUnit} />}
+      <Navbar initialWeatherData={currentWeather} onCitySelect={handleWeatherData} onTempUnitChange={handleTempUnitChange} />
+      <UserLocationWeather weatherData={userLocationWeather} tempUnit={tempUnit} />
+      {currentWeather && <WeatherInfo weatherData={currentWeather} forecastData={forecastData} tempUnit={tempUnit} />}
     </div>
   );
 }

@@ -15,7 +15,7 @@ const Navbar = ({ onCitySelect, initialWeatherData, onTempUnitChange }) => {
 
   const handleCitySelect = (city) => {
     setSelectedCity(city);
-    onCitySelect(city.weather); // Pass weather data to the parent component or any other handler
+    onCitySelect(city); // Pass city data (including coordinates) to the parent component
   };
 
   const handleTempUnitChange = (event) => {

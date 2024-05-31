@@ -1,10 +1,8 @@
-/* src/components/WeatherInfo.css */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   color: white;
-  
 }
 .full-weather {
   height: 75vh;
@@ -14,7 +12,7 @@
 }
 
 .weather-info {
-    overflow-x: hidden;
+  overflow-x: hidden;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   width: 70vw;
@@ -35,17 +33,19 @@
 }
 
 .weather-info button:focus,
-.weather-info button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  /* border: 1px solid white; */
+.weather-info button:hover,
+.weather-info .active-button {
+  background-color: rgba(255, 255, 255, 0.2);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   border-bottom: 0;
 }
 
 .weather-top {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
   width: 100%;
   height: 10vh;
   padding-left: 50px;
@@ -116,8 +116,6 @@
   font-weight: 600;
 }
 
-/* Add this CSS code to your existing WeatherInfo.css file */
-
 .forecast {
   display: flex;
   flex-direction: column;
@@ -125,9 +123,7 @@
 }
 
 .forecast-day h3 {
-  /* background-color: rgba(255, 255, 255, 0.1); */
   border-radius: 20px;
-  /* margin: 10px 0; */
   padding: 10px 20px;
   font-size: 25px;
 }
@@ -156,3 +152,9 @@
   justify-content: center;
 }
 
+.forecast-item p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

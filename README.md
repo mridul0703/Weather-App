@@ -1,6 +1,6 @@
 <h2 align="center">
   Weather App - 
-  <a href="https://your-weather-app-demo-link" target="_blank">Live Demo</a><br /><br />
+  <a href="https://mridul-weather-app.vercel.app/" target="_blank">Live Demo</a><br /><br />
   <p>Stay updated with the latest weather information!</p>
 </h2>
 
@@ -48,8 +48,8 @@ This project was built using these technologies:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/weather-app.git
-    cd weather-app
+    https://github.com/mridul0703/Weather-App.git
+    cd Weather-App
     ```
 
 2. Install dependencies:
@@ -57,12 +57,7 @@ This project was built using these technologies:
     npm install
     ```
 
-3. Create a `.env` file in the root of the project and add your OpenWeather API key:
-    ```env
-    REACT_APP_OPENWEATHER_API_KEY=your_api_key_here
-    ```
-
-4. Start the development server:
+3. Start the development server:
     ```bash
     npm start
     ```
